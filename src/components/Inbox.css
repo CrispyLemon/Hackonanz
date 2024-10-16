@@ -1,0 +1,70 @@
+/* Inbox.css */
+.inbox {
+    background-color: #f7f9fc; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding around the content */
+    max-width: 500px; /* Set a max width for the component */
+    margin: 20px auto; /* Center the component */
+  }
+  
+  .inbox h2 {
+    margin-bottom: 15px; /* Spacing below the heading */
+    color: #333; /* Dark text color */
+  }
+  
+  .search-input {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding for the input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    margin-bottom: 20px; /* Spacing below the input */
+    font-size: 16px; /* Font size */
+    background-color: #ffffff; /* White background for input */
+  }
+  
+  .message-list {
+    list-style: none; /* Remove bullets from list */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .message-item {
+    display: flex; /* Flex display */
+    flex-direction: column; /* Column layout for details */
+    padding: 15px; /* Spacing for each message item */
+    border-bottom: 1px solid #e0e0e0; /* Separator line */
+    transition: background-color 0.2s; /* Smooth background color transition */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .message-item:hover {
+    background-color: #e0f7fa; /* Light cyan background on hover */
+  }
+  
+  .message-details {
+    display: flex;
+    flex-direction: column; /* Column layout for message details */
+  }
+  
+  .message-sender {
+    font-weight: bold; /* Bold sender name */
+    color: #00796b; /* Teal color */
+  }
+  
+  .message-subject {
+    color: #333; /* Dark color for subject */
+    font-size: 14px; /* Font size for subject */
+    margin: 4px 0; /* Spacing for subject */
+  }
+  
+  .message-preview {
+    color: #666; /* Gray color for preview text */
+    font-size: 12px; /* Smaller font size for preview */
+  }
+  
+  .no-messages {
+    text-align: center; /* Center the no messages message */
+    color: #888; /* Gray text for no messages */
+    font-style: italic; /* Italic style */
+  }
+  

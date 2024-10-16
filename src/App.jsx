@@ -5,21 +5,30 @@ import Sidebar from './components/Sidebar';
 import Students from './components/Students';
 import Courses from './components/Courses';
 import Assignment from './components/Assignment';
+import Navbar from './components/Navbar';
 import './App.css';
 
 function App() {
   return (
-    <div className='d-flex'>
-      <BrowserRouter>
+    <BrowserRouter>
+      <div style={{ display: 'flex', height: '100%', gap: '10px' }}>
         <Sidebar />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/students" element={<Students />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/assignments" element={<Assignment />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+        <div style={{ marginLeft: '300px', flexGrow: 1, height: '100vh', overflowY: 'auto', padding: '20px' }}>
+          <div>
+            <Navbar />
+          </div>
+          <div>
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/students" element={<Students />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/assignments" element={<Assignment />} />
+            </Routes>
+          </div>
+        </div>
+      </div>
+    </BrowserRouter >
+
   );
 }
 

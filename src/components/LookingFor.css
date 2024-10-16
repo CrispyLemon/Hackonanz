@@ -1,0 +1,72 @@
+.student-list {
+    background-color: #f9f9f9; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    max-width: 400px; 
+    margin: 20px auto; 
+    transition: transform 0.3s; 
+  }
+  
+  .student-list:hover {
+    transform: scale(1.02); 
+  }
+  
+  .student-list h2 {
+    margin-bottom: 10px;
+    color: #333; 
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    margin-bottom: 20px; 
+    font-size: 16px; 
+    background-color: #ffffff; 
+  }
+  
+  .loading {
+    text-align: center; 
+    font-size: 18px; 
+    color: #666; 
+    margin: 20px 0; 
+  }
+  
+  .student-items {
+    list-style: none; 
+    padding: 0; 
+  }
+  
+  .student-item {
+    display: flex;
+    align-items: center; 
+    padding: 10px; 
+    border-bottom: 1px solid #e0e0e0; 
+    cursor: pointer; 
+    transition: background-color 0.2s; 
+    gap: 10px; 
+    background-color: #ffffff; 
+  }
+  
+  .student-item:hover {
+    background-color: #e0f7fa;
+  }
+  
+  .student-img {
+    border-radius: 50%; 
+    width: 40px;
+    height: 40px; 
+  }
+  
+  .student-name {
+    font-size: 16px; 
+    color: #333; 
+  }
+  
+  .no-results {
+    text-align: center; 
+    color: #888; 
+  }
+  
