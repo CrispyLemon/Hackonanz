@@ -24,35 +24,35 @@ export default function Sidebar() {
       </div>
 
       <ul>
-        <li className={`${location.pathname === '/' ? 'active-tab' : ''}`}>
-          <Link to='/' style={{ color: "white", textDecoration: "none" }}>
+        <Link to='/' style={{ color: "white", textDecoration: "none" }}>
+          <li className={`${location.pathname === '/' ? 'active-tab' : ''}`}>
             <TbHomeStats /> DASHBOARD
-          </Link>
-        </li>
-        <li style={{ padding: "4px" }} className={`${location.pathname === '/students' ? 'active-tab' : ''}`}>
-          <Link to='/students' style={{ color: "white", textDecoration: "none" }}>
+          </li>
+        </Link>
+        <Link to='/students' style={{ color: "white", textDecoration: "none" }}>
+          <li style={{ padding: "4px" }} className={`${location.pathname === '/students' ? 'active-tab' : ''}`}>
             <img src={pulse_connect} style={{ height: "40px", marginRight: "0.5rem" }} alt="pulse connect" />
             PULSE_CONNECT
-          </Link>
-        </li>
-        <li className={`${location.pathname === '/courses' ? 'active-tab' : ''}`}>
-          <Link to='/courses' style={{ color: "white", textDecoration: "none" }}>
+          </li>
+        </Link>
+        <Link to='/courses' style={{ color: "white", textDecoration: "none" }}>
+          <li className={`${location.pathname === '/courses' ? 'active-tab' : ''}`}>
             <GrTasks /> COURSES
-          </Link>
-        </li>
-        <li className={`${location.pathname === '/assignments' ? 'active-tab' : ''}`}>
-          <Link to='/assignments' style={{ color: "white", textDecoration: "none" }}>
+          </li>
+        </Link>
+        <Link to='/assignments' style={{ color: "white", textDecoration: "none" }}>
+          <li className={`${location.pathname === '/assignments' ? 'active-tab' : ''}`}>
             <SiBookstack /> ASSIGNMENTS
-          </Link>
-        </li>
+          </li>
+        </Link>
       </ul>
 
       <ul style={{ marginTop: "16rem" }}>
-        <li>
-          <Link to="http://nsut.ac.in/en/home" target="_blank" style={{ textDecoration: "none", color: "white" }}>
+        <Link to="http://nsut.ac.in/en/home" target="_blank" style={{ textDecoration: "none", color: "white" }}>
+          <li>
             <PiBuildingsFill /> NSUT
-          </Link>
-        </li>
+          </li>
+        </Link>
       </ul>
     </div>
   );
