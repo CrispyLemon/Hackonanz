@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Login.css';
 
-export default function AuthPage() {
-  const [isLogin, setIsLogin] = useState(true);
+export default function Login({ setIsLoggedIn }) {
+  const [isLogin, setIsLogin] = useState(true); // Toggle between login and signup
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -14,7 +14,7 @@ export default function AuthPage() {
     event.preventDefault();
     setError('');
     setMessage('');
-    
+
     if (!isLogin && password !== confirmPassword) {
       setError('Passwords do not match');
       return;
@@ -26,11 +26,12 @@ export default function AuthPage() {
         const response = await axios.post('http://localhost:5000/api/login', { email, password });
         localStorage.setItem('token', response.data.token);
         setMessage('Logged in successfully');
+        setIsLoggedIn(true); // Call to update the login state
       } else {
         // Sign up logic
         await axios.post('http://localhost:5000/api/register', { email, password });
         setMessage('Registered successfully, please log in.');
-        setIsLogin(true);
+        setIsLogin(true); // After signup, switch back to login view
       }
     } catch (err) {
       setError(err.response?.data?.message || 'An error occurred');
