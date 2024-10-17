@@ -53,7 +53,7 @@ export default function Dashboard() {
           <div style={{ backgroundColor: "white", borderRadius: "1rem", padding: "20px", width: "45%", textAlign: "center" }}>
             <h3 style={{ marginBottom: '20px' }}>Calendar</h3>
             <div>
-              <iframe src="https://calendar.google.com/calendar/embed?src=anubhav.singhal.ug23%40nsut.ac.in&ctz=Asia%2FKolkata"
+              <iframe src="https://calendar.google.com/calendar/embed?src=aryanb349%40gmail.com&ctz=Asia%2FKolkata"
                 style={{ border: "0", borderRadius: "10px" }} width="500" height="500"></iframe>
             </div>
           </div>
