@@ -1,6 +1,24 @@
 import React from 'react';
+import Notes from './Notes';
+import { useState } from 'react';
 
 export default function Dashboard() {
+
+  const [notes, setNotes] = useState([
+    { id: 1, title: 'Note 1', content: 'Lorem ipsum dolor sit amet...', color: '#BBDEFB' },
+    { id: 2, title: 'Note 2', content: 'Lorem ipsum dolor sit amet...', color: '#C8E6C9' },
+    { id: 3, title: 'Note 3', content: 'Lorem ipsum dolor sit amet...', color: '#FFECB3' },
+    { id: 4, title: 'Note 4', content: 'Lorem ipsum dolor sit amet...', color: '#FFE0B2' },
+  ]);
+
+  const [newNote, setNewNote] = useState({ title: '', content: '', color: '#BBDEFB' });
+
+  const addNote = () => {
+    const id = notes.length + 1; // Assign new id based on the length of notes array
+    setNotes([...notes, { ...newNote, id }]);
+    setNewNote({ title: '', content: '', color: '#BBDEFB' }); // Reset form after adding
+  };
+
   return (
     <>
       <div style={{ backgroundColor: "#d9d9d9", borderRadius: "1rem", padding: "1.5rem", width: "90%", margin: 'auto' }}>
@@ -36,44 +54,47 @@ export default function Dashboard() {
             <h3 style={{ marginBottom: '20px' }}>Calendar</h3>
             <div>
               <iframe src="https://calendar.google.com/calendar/embed?src=anubhav.singhal.ug23%40nsut.ac.in&ctz=Asia%2FKolkata"
-                style={{ border: "0", borderRadius: "10px" }} width="400" height="400"></iframe>
+                style={{ border: "0", borderRadius: "10px" }} width="500" height="500"></iframe>
             </div>
-            {/* <div style={{ textAlign: "right", marginTop: "10px" }}>
-              <button style={{
-                backgroundColor: '#E0E0E0', padding: '10px', borderRadius: '50%', border: 'none', cursor: 'pointer'
-              }}>✏️</button>
-            </div> */}
           </div>
         </div>
 
         {/* Notes Section */}
         <div style={{ backgroundColor: "white", borderRadius: "1rem", padding: "20px", marginTop: "20px", textAlign: "center" }}>
-          <h3>Notes</h3>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px', gap: '20px' }}>
-            <div style={{ backgroundColor: '#BBDEFB', borderRadius: '10px', padding: '15px', width: '23%' }}>
-              <h4>Note 1</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            </div>
-            <div style={{ backgroundColor: '#C8E6C9', borderRadius: '10px', padding: '15px', width: '23%' }}>
-              <h4>Note 2</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            </div>
-            <div style={{ backgroundColor: '#FFECB3', borderRadius: '10px', padding: '15px', width: '23%' }}>
-              <h4>Note 3</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            </div>
-            <div style={{ backgroundColor: '#FFE0B2', borderRadius: '10px', padding: '15px', width: '23%' }}>
-              <h4>Note 4</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            </div>
+          <Notes notes={notes} />
+          
+          {/* Add new note form */}
+          <div style={{ marginTop: '20px' }}>
+            <input
+              type="text"
+              placeholder="Title"
+              value={newNote.title}
+              onChange={(e) => setNewNote({ ...newNote, title: e.target.value })}
+              style={{ marginRight: '10px', padding: '10px' }}
+            />
+            <input
+              type="text"
+              placeholder="Content"
+              value={newNote.content}
+              onChange={(e) => setNewNote({ ...newNote, content: e.target.value })}
+              style={{ marginRight: '10px', padding: '10px' }}
+            />
+            <select
+              value={newNote.color}
+              onChange={(e) => setNewNote({ ...newNote, color: e.target.value })}
+              style={{ marginRight: '10px', padding: '10px' }}
+            >
+              <option value="#BBDEFB">Blue</option>
+              <option value="#C8E6C9">Green</option>
+              <option value="#FFECB3">Yellow</option>
+              <option value="#FFE0B2">Orange</option>
+            </select>
+            <button onClick={addNote} style={{ padding: '10px 20px' }}>Add Note</button>
           </div>
-          <div style={{ textAlign: "right", marginTop: '10px' }}>
-            <button style={{
-              backgroundColor: '#E0E0E0', padding: '10px', borderRadius: '50%', border: 'none', cursor: 'pointer'
-            }}>➕ Create</button>
-          </div>
+
+          
         </div>
       </div>
     </>
-  )
+  );
 }
